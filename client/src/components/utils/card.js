@@ -26,6 +26,23 @@ class Card extends Component {
         > 
           
         </div>
+        
+
+
+        {/*
+          ESSAI IMAGE CLICKABLE AVEC BUTTON.JS
+        */}
+        {/* <div className="image" style={{background:`url(${this.renderCardImage(props.images)}) no-repeat`}}>
+            <MyButton
+              type="image"
+              altClass="card_link"
+              linkTo={`/product_detail/${props._id}`}
+              addStyles={{
+                background:`url(${this.renderCardImage(props.images)}) no-repeat`               
+              }}
+            />
+        </div> */}
+
         <div className="action_container">
           <div className="tags">
             <div className="brand">{props.brand.name}</div>
