@@ -17,12 +17,13 @@ class Card extends Component {
 
     return (
       <div className={`card_item_wrapper ${props.grid}`}>
+        
         <div
           className="image"
           style={{
             background:`url(${this.renderCardImage(props.images)}) no-repeat`
           }}
-        >
+        > 
           
         </div>
         <div className="action_container">
@@ -31,10 +32,12 @@ class Card extends Component {
             <div className="name">{props.name}</div>
             <div className="price">${props.price}</div>
           </div>
-        </div>
+        
         {props.grid ?
           <div className="description">
-              sdfdsqqsdg
+              <p>
+                {props.description}
+              </p>
           </div>
         
           :null
@@ -61,6 +64,7 @@ class Card extends Component {
           </div>
         </div>
       </div>
+    </div>
     )
   }
 }
