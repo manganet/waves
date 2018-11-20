@@ -123,7 +123,7 @@ class Register extends Component {
             }
       })
             .catch(e => {
-              this.setState()
+              this.setState({formError: true})
       })
       
     } else {

@@ -12,10 +12,10 @@ class App extends Component {
   }
 
   render() {
-    return ( <
-      div className = "App" >
-      MY APP <
-      /div>
+    return (
+      <div className="App">
+        MY APP
+      </div>
     );
   }
 }
