@@ -32,15 +32,6 @@ const MyButton = (props) => {
           </div>
       break;
       
-      // case "image":
-      //   template = <Link
-      //     className={!props.altClass ? 'link_image': props.altClass}
-      //     to={props.linkTo}
-      //     {...props.addStyles}
-      //   >
-      //     </Link>
-      // break;
-      
       default:
         template='';
     }
