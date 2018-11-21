@@ -118,6 +118,7 @@ app.get('/api/product/articles', (req, res) => {
   })
 })
 
+/// /api/product/article?id=HSHSHSHSH,JSJSJSJSJSJS,SDFDQSF,SDGSD&type=single
 app.get('/api/product/articles_by_id', (req, res) => {
   let type = req.query.type;
   let items = req.query.id;
