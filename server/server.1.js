@@ -9,19 +9,8 @@ const mongoose = require('mongoose');
 const async = require('async');
 require('dotenv').config();
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.MONGODB_URI)
-
-// DB Config
-const db = require('./config/keys').mongoURI;
-
-// Connect to Mongo
-mongoose
-    .connect(db)
-    .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
-    
-  
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI)
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -517,14 +506,13 @@ app.post('/api/site/site_data', auth, admin, (req, res)=>{
 
 
 // DEFAULT
-// Serve static assets if in production
-if(process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
 
-  app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.use(express.static('client/build'))
+  app.get('/*', (req,res) => {
+    res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+  })
 }
 
 
