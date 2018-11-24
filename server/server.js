@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const formidable = require('express-formidable');
 const cloudinary = require('cloudinary');
-const path = require('path');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -25,8 +24,6 @@ app.all('/', function (req, res, next) {
 
   next();
 });
-
-app.use(express.static('client/build'))
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -512,6 +509,7 @@ app.post('/api/site/site_data', auth, admin, (req, res)=>{
 
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
+  app.use(express.static('client/build'))
   app.get('/*', (req,res) => {
     res.sendFile(path.resolve(__dirname,'client','build','index.html'))
   })
